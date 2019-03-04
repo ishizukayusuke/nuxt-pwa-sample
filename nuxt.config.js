@@ -61,5 +61,9 @@ module.exports = {
     extend(config, ctx) {
       
     }
+  },
+
+  workbox: {
+    dev: true
   }
 }

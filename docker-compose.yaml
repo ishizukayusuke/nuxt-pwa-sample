@@ -1,0 +1,21 @@
+version: '3.6'
+services:
+
+  app:
+    container_name: nuxt-app-local
+    build:
+      context: .
+    tty: true
+    expose:
+      - 3000
+    ports:
+      - "3000:3000"
+    working_dir: /app
+    volumes:
+      - .:/app:cached
+      - node_modules:/app/node_modules:cached
+    command: yarn dev
+    
+volumes:
+  node_modules:
+    driver: local
