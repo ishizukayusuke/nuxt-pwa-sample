@@ -173,3 +173,31 @@ chrome devツールの
 「Application」>「Clear Storage」でキャッシュを削除し、  
 再度http://localhost:3000/  にアクセスしてみましょう。
 
+
+## ホーム画面に追加
+
+nuxt.config.jsに以下を追記。  
+
+```
++  manifest: {
++    name: 'PWATest',
++    short_name: 'PWA',
++    title: 'PWATest',
++    'og:title': 'PWATest',
++    description: 'PWATest',
++    'og:description': 'PWATest',
++    lang: 'ja',
++    theme_color: '#ffffff',
++    background_color: '#ffffff'
++  },
+```
+
+serviceworkerがうまく動作すれば、  
+ホーム画面追加＋ローカルページキャッシュでスマホアプリっぽくなるはず。。  
+
+ローカルPCにスマホからうまくアクセスできない方は、、  
+お手持ちのスマホから(ラボのネットワークに繋いでください)  
+http://52.195.8.156/
+https://dnyxfwtnq3kxz.cloudfront.net にアクセス  
+
+
