@@ -128,11 +128,12 @@ SSR以外にも対応したモードがある。「npx create-nuxt-app [project-
 ## 主要機能
 * オフライン動作(ServiceWorker)
 * プッシュ通知
-* ホーム
+* ホーム画面に追加
 
 
 ## PWA導入
 
+(今回はもう入っているので不要)  
 nuxtjs用のPWAライブラリをインストール  
 ```$ yarn add @nuxtjs/pwa```
 
@@ -148,7 +149,7 @@ yarn入ってる人はこっちの方が検証しやすいかと
  $ yarn nuxt start
 ```
 
-docker
+yarn入ってないかたはdockerでどうぞ
 ```
 ビルド
 $ docker image build -t nuxt-app:latest .
@@ -156,3 +157,19 @@ $ docker image build -t nuxt-app:latest .
 $ docker run -d -p 3000:3000 --name nuxt-app nuxt-app:latest 
 
 ```
+
+http://localhost:3000/  
+にアクセスして適当に徘徊してからサーバーを落とし、  
+再度アクセスしてみましょう。
+
+キャッシュが入っていることを確認できたら、  
+適当にトップ画面の文言を変更して再度サーバーを立ち上げてみましょう。  
+キャッシュが入っていても最新が反映されているかと。
+
+chrome devツールの  
+「Application」>「Audits」してみましょう
+
+再度サーバーを落とし、chrome devツールの  
+「Application」>「Clear Storage」でキャッシュを削除し、  
+再度http://localhost:3000/  にアクセスしてみましょう。
+
